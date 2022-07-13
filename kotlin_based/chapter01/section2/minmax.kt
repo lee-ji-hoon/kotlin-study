@@ -1,4 +1,4 @@
-package chap02
+package chapter01
 
 fun main() {
     println("Byte : ${Byte.MIN_VALUE} ~ ${Byte.MAX_VALUE}")

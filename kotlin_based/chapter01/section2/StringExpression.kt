@@ -1,4 +1,4 @@
-package chap02
+package chapter01
 
 fun main() {
     var b = 1

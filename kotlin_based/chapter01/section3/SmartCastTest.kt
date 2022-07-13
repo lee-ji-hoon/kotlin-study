@@ -1,4 +1,4 @@
-package chap02.section3
+package chapter01.section3
 
 fun main() {
     var test: Number = 12.2 // 12.2에 의해 test는 Float형으로 스마트 캐스트!

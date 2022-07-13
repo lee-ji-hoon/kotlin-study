@@ -1,4 +1,4 @@
-package chap02.section3
+package chapter01.section3
 
 fun main() {
     var a: Any = 1 // Any형 a는 1로 초기화될 때 Int형이 됨

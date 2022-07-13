@@ -1,4 +1,4 @@
-package chap02.section3
+package chapter01.section3
 
 fun main() {
     checkArg("Hello") // 문자열을 인자로 넣음
