@@ -1,7 +1,6 @@
 package javaToKotlin.chapter01.section01;
 
-import java.util.Arrays;
-import java.util.List;
+import javaToKotlin.chapter01.Person;
 
 public class Lec01Main {
     long number1 = 10L; // 1
@@ -10,4 +9,10 @@ public class Lec01Main {
 
     Long number3 = 1_000L; // 3
     Person person = new Person("최태현"); // 4
+//
+//    public long calculate(Long number) {
+//        if(number == null)
+//            return 0;
+//        // 다음 로직
+//    }
 }
