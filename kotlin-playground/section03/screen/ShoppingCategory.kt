@@ -6,15 +6,17 @@ import section03.data.Category
 import section03.data.Category.*
 import section03.extensions.getNotEmptyString
 
-class ShoppingCategory {
+class ShoppingCategory : Screen() {
     private val shoppingCartList = ShoppingCart()
-    private val shoppingProductList = ShoppingProductList
     fun showCategory() {
-        println("""
+        ScreenStack.push(this)
+        println(
+            """
                 ${LINE_DIVIDER}
                 원하시는 카테고리를 입력해주세요.
                 ${LINE_DIVIDER}
-                """.trimIndent())
+                """.trimIndent()
+        )
         for (value in Category.values())
             if (value.toString() != "#") println(value.toString())
         println("${LINE_DIVIDER}")
@@ -26,9 +28,9 @@ class ShoppingCategory {
         while (true) {
             val inputCategory = readLine().getNotEmptyString()
             when (inputCategory) {
-                DEVICES.koreanName -> shoppingProductList.showProducts(DEVICES)
-                PASSION.koreanName -> shoppingProductList.showProducts(PASSION)
-                PET_SUPPLIES.koreanName -> shoppingProductList.showProducts(PET_SUPPLIES)
+                DEVICES.koreanName -> ShoppingProductList(DEVICES).showProducts()
+                PASSION.koreanName -> ShoppingProductList(PASSION).showProducts()
+                PET_SUPPLIES.koreanName -> ShoppingProductList(PET_SUPPLIES).showProducts()
                 CART.koreanName -> shoppingCartList.showCart()
                 else -> {
                     println("존재하지 않는 카테고리를 입력했습니다. 입력값 -> ${inputCategory}")

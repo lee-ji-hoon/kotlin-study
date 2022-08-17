@@ -1,15 +1,17 @@
 package section03.screen
+
 import section03.LINE_DIVIDER
 import section03.data.CartItems
 
-class ShoppingCart {
+class ShoppingCart : Screen() {
     private val products = CartItems.products
     fun showCart() {
-        if(products.isNotEmpty()) {
+        ScreenStack.push(this)
+        if (products.isNotEmpty()) {
             println(
-                products.keys.joinToString (
+                products.keys.joinToString(
                     separator = ", \n",
-                    prefix =  """
+                    prefix = """
                     ${LINE_DIVIDER}
                     장바구니에 담은 상품 목록입니다.
                     """.trimIndent()
@@ -18,9 +20,11 @@ class ShoppingCart {
                 }
             )
         } else {
-            println("""
+            println(
+                """
                 장바구니에 담긴 상품이 없습니다.
-            """.trimIndent())
+            """.trimIndent()
+            )
         }
     }
 }

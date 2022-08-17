@@ -2,16 +2,20 @@ package section03.screen
 
 import section03.extensions.getNotEmptyString
 
-object ShoppingMainHome {
+class ShoppingMainHome : Screen() {
     private val shoppingCategory = ShoppingCategory()
     fun start() {
+        showWelcomMessage()
+        redeiveInputAndShow()
+    }
+
+    private fun showWelcomMessage() {
         val brandName = "Shoppi"
         val greetings = """
-        안녕하세요, ${brandName} 에 오신 것을 환영합니다! 
-        쇼핑을 계속 하시려면 이름을 입력해주세요 :)
-        """.trimIndent()
+            안녕하세요, ${brandName} 에 오신 것을 환영합니다! 
+            쇼핑을 계속 하시려면 이름을 입력해주세요 :)
+            """.trimIndent()
         println(greetings)
-        redeiveInputAndShow()
     }
 
     fun redeiveInputAndShow() {
