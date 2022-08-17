@@ -4,7 +4,7 @@ import section03.data.Category
 import section03.data.Category.*
 
 class ShoppingCategory {
-    private val shoppingCartList = ShoppingCartList()
+    private val shoppingCartList = ShoppingCart()
     private val shoppingProductList = ShoppingProductList
     fun showCategory() {
         println("""
@@ -37,8 +37,7 @@ class ShoppingCategory {
                     shoppingProductList.showProducts(PET_SUPPLIES)
                 }
                 CART.koreanName -> {
-                    shoppingCartList.showCart(shoppingCart)
-                    shoppingProductList.showProducts(CART)
+                    shoppingCartList.showCart()
                 }
                 else -> {
                     println("존재하지 않는 카테고리를 입력했습니다. 입력값 -> ${inputCategory}")

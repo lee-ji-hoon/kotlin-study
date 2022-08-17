@@ -9,6 +9,6 @@ import section03.screen.ShoppingProductList
 // 4. 카테고리 고르기 -> 만약 없는거 골랐을 경우 따로 정의
 // 5. # 입력했을때 장바구니 이동 -> 장바구니 출력
 fun main() {
-    val shoppingMainHome = ShoppingMainHome()
+    val shoppingMainHome = ShoppingMainHome
     shoppingMainHome.start()
 }
