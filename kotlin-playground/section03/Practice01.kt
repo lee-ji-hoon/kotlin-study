@@ -26,10 +26,6 @@ fun main() {
         val nickname: String? = readLine()
         if (nickname.isNullOrEmpty()) throw Exception("이름이 입력되지 않았습니다.")
         println("감사합니다. 반값습니다, ${nickname} 님")
-        // 1. 카테고리 정의
-        // 2. 장바구니용 배열 만들기
-        // 3. 장바구니 선택 when
-        // 4.. # 입력하면 장바구니로 이동
         showCategory()
     } catch (e: Exception) {
         e.printStackTrace()
