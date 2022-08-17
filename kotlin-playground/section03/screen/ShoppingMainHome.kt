@@ -1,5 +1,7 @@
 package section03.screen
 
+import section03.extensions.getNotEmptyString
+
 object ShoppingMainHome {
     private val shoppingCategory = ShoppingCategory()
     fun start() {
@@ -13,13 +15,9 @@ object ShoppingMainHome {
     }
 
     fun redeiveInputAndShow() {
-        try {
-            val nickname: String? = readLine()
-            if (nickname.isNullOrEmpty()) throw Exception("이름이 입력되지 않았습니다.")
-            println("\n감사합니다. 반값습니다, ${nickname} 님")
-            shoppingCategory.showCategory()
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
+        val nickname: String = readLine().getNotEmptyString()
+        if (nickname.isNullOrEmpty()) throw Exception("이름이 입력되지 않았습니다.")
+        println("\n감사합니다. 반값습니다, ${nickname} 님")
+        shoppingCategory.showCategory()
     }
 }

@@ -4,6 +4,8 @@ import section03.data.CartItems
 import section03.data.Category
 import section03.data.Category.*
 import section03.data.Product
+import section03.extensions.getNotEmptyInt
+import section03.extensions.getNotEmptyString
 
 object ShoppingProductList {
     private val shoppingCategory = ShoppingCategory()
@@ -43,11 +45,11 @@ object ShoppingProductList {
             """.trimIndent()
         )
 
-        val selectedIndex = readln().toInt()
+        val selectedIndex = readLine().getNotEmptyInt()
         productsWithCategory.getOrNull(selectedIndex)?.let { product ->
             CartItems.addProduct(product)
             println("=> 장바구니로 이동하시려면 #을 계속 쇼핑하시려면 *을 눌러주세요..")
-            val answer = readln()
+            val answer = readLine().getNotEmptyString()
             when(answer) {
                 "#" -> ShoppingCart().showCart()
                 "*" -> showProducts(category)
