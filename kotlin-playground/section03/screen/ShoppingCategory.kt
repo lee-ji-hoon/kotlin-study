@@ -5,7 +5,7 @@ import section03.data.Category.*
 
 class ShoppingCategory {
     private val shoppingCartList = ShoppingCartList()
-    private val shoppingProductList = ShoppingProductList()
+    private val shoppingProductList = ShoppingProductList
     fun showCategory() {
         println("""
                 =====================================

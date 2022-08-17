@@ -4,14 +4,14 @@ import section03.data.Category
 import section03.data.Category.*
 import section03.data.Product
 
-private val jacket = Product(PASSION, "자켓", 10_000)
-private val padding = Product(PASSION, "패딩", 100_000)
-private val monitor = Product(DEVICES, "모니터", 150_000)
-private val phone = Product(DEVICES, "휴대폰", 21_0000)
-private val catPole = Product(PET_SUPPLIES, "캣폴", 21_0000)
-private val rat = Product(PET_SUPPLIES, "쥐돌이", 21_0000)
+object ShoppingProductList {
+    private val jacket = Product(PASSION, "자켓", 10_000)
+    private val padding = Product(PASSION, "패딩", 100_000)
+    private val monitor = Product(DEVICES, "모니터", 150_000)
+    private val phone = Product(DEVICES, "휴대폰", 21_0000)
+    private val catPole = Product(PET_SUPPLIES, "캣폴", 21_0000)
+    private val rat = Product(PET_SUPPLIES, "쥐돌이", 21_0000)
 
-class ShoppingProductList {
     private val products = arrayOf(jacket, padding, monitor, phone, catPole, rat)
     private val categories: Map<String, List<Product>> = products.groupBy { product ->
         product.category.koreanName

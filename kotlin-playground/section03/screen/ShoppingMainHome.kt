@@ -1,6 +1,6 @@
 package section03.screen
 
-class ShoppingMainHome {
+object ShoppingMainHome {
     private val shoppingCategory = ShoppingCategory()
     fun start() {
         val brandName = "Shoppi"
