@@ -11,17 +11,21 @@ private val phone = Product(DEVICES, "휴대폰", 21_0000)
 private val catPole = Product(PET_SUPPLIES, "캣폴", 21_0000)
 private val rat = Product(PET_SUPPLIES, "쥐돌이", 21_0000)
 
-private val productList = mutableMapOf<Category, ArrayList<Product>>().apply {
-    this.put(PASSION, arrayListOf<Product>(jacket, padding))
-    this.put(DEVICES, arrayListOf<Product>(monitor, phone))
-    this.put(PET_SUPPLIES, arrayListOf<Product>(rat, catPole))
-}
-
 class ShoppingProductList {
+    private val products = arrayOf(jacket, padding, monitor, phone, catPole, rat)
+    private val categories: Map<String, List<Product>> = products.groupBy { product ->
+        product.category.koreanName
+    }
+
     fun showProducts(category: Category) {
-        val productsWithCategory = productList.get(category) ?: throw Exception("존재하지 않는 카테고리 입니다.")
-        for (product in productsWithCategory) {
-            println(product)
+        val productsWithCategory = categories.get(category.koreanName) ?: throw Exception("존재하지 않는 카테고리 입니다.")
+        println("""
+                =====================================
+                선택하신 [${category.koreanName}] 카테고리 상품입니다.
+                =====================================
+            """.trimIndent())
+        for ((index, product) in productsWithCategory.withIndex()) {
+            println("${index}. ${product}")
         }
     }
 }
