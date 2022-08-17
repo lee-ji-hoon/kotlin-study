@@ -1,7 +1,7 @@
 package section03.screen
 
 class ShoppingMainHome {
-    private val shoppingProductList = ShoppingProductList()
+    private val shoppingCategory = ShoppingCategory()
     fun start() {
         val brandName = "Shoppi"
         val greetings = """
@@ -17,7 +17,7 @@ class ShoppingMainHome {
             val nickname: String? = readLine()
             if (nickname.isNullOrEmpty()) throw Exception("이름이 입력되지 않았습니다.")
             println("\n감사합니다. 반값습니다, ${nickname} 님")
-            shoppingProductList.showProducts()
+            shoppingCategory.showCategory()
         } catch (e: Exception) {
             e.printStackTrace()
         }

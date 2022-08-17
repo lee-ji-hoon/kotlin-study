@@ -1,11 +1,11 @@
 package section03.data
 
-enum class Product(
-    val koreanName: String
+data class Product(
+    val category: Category,
+    val name: String,
+    val price: Int
 ) {
-    PASSION("패션"),
-    DEVICES("전자기기"),
-    PET_SUPPLIES("반려동물용품"),
-    CART("#");
-    override fun toString() = koreanName
+    override fun toString(): String {
+        return "제품명: $name, 가격: $price"
+    }
 }
