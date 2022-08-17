@@ -2,7 +2,7 @@ package section03.extensions
 
 fun String?.getNotEmptyString(): String {
     var input = this
-    while(input.isNullOrBlank()) {
+    while (input.isNullOrBlank()) {
         println("값을 입력해주세요.")
         input = readln()
     }
@@ -11,7 +11,7 @@ fun String?.getNotEmptyString(): String {
 
 fun String?.getNotEmptyInt(): Int {
     var input = this?.trim()
-    while(input.isNullOrEmpty() || input.toIntOrNull() == null) {
+    while (input.isNullOrEmpty() || input.toIntOrNull() == null) {
         println("값을 입력해주세요.")
         input = readln()
     }

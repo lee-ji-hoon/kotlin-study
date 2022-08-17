@@ -1,5 +1,6 @@
 package section03.screen
 
+import section03.LINE_DIVIDER
 import section03.data.CartItems
 import section03.data.Category
 import section03.data.Category.*
@@ -25,9 +26,9 @@ object ShoppingProductList {
     fun showProducts(category: Category) {
         val productsWithCategory = categories.get(category.koreanName)
         println("""
-                =====================================
+                ${LINE_DIVIDER}
                 선택하신 [${category.koreanName}] 카테고리 상품입니다.
-                =====================================
+                ${LINE_DIVIDER}
             """.trimIndent())
         if (!productsWithCategory.isNullOrEmpty()) {
             for ((index, product) in productsWithCategory.withIndex()) {
@@ -40,7 +41,7 @@ object ShoppingProductList {
     private fun showCartOption(productsWithCategory: List<Product>, category: Category) {
         println(
             """
-            ***====================================
+            ${LINE_DIVIDER}
             장바구니에 담을 상품 번호를 선택해주세요.
             """.trimIndent()
         )

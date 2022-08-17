@@ -1,6 +1,7 @@
 package section03.screen
 
 import day17.input
+import section03.LINE_DIVIDER
 import section03.data.Category
 import section03.data.Category.*
 import section03.extensions.getNotEmptyString
@@ -10,13 +11,13 @@ class ShoppingCategory {
     private val shoppingProductList = ShoppingProductList
     fun showCategory() {
         println("""
-                =====================================
+                ${LINE_DIVIDER}
                 원하시는 카테고리를 입력해주세요.
-                =====================================
+                ${LINE_DIVIDER}
                 """.trimIndent())
         for (value in Category.values())
             if (value.toString() != "#") println(value.toString())
-        println("=====================================")
+        println("${LINE_DIVIDER}")
         choiceCategory()
     }
 
