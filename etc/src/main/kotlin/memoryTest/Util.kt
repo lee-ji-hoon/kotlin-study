@@ -1,4 +1,4 @@
-package heapTest
+package memoryTest
 
 object Util {
     const val max = 5_000_000

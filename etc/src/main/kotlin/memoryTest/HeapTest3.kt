@@ -1,4 +1,4 @@
-package heapTest
+package memoryTest
 
 /**
  * 메모리단에서 String으로 갖고 있느냐 byte 상태로 갖고 있느냐에 따라서 두 배 정도 차이가 있다.

@@ -7,15 +7,22 @@ data class Sum(val e1: Expr, val e2: Expr) : Expr()
 object NotANumber : Expr()
 
 fun main() {
-    val num1 = Const(10.0)
-    val num2 = Const(20.0)
-    val sum = Sum(num1, num2)
-    val result = eval(sum)
-    println("result : $result")
-}
+    println(System.currentTimeMillis())
+    /*val map = hashMapOf<String, Int>()
+    val set = hashSetOf<String>()
+    for (s in id_list) {
+        val split = s.split(" ")
+        set.addAll(split)
+        for (s in set) {
+            val temp = map[s] ?: 0
+            map[s] = temp + 1
+        }
+    }
 
-fun eval(expr: Expr): Double = when(expr) {
-    is Const -> expr.number
-    is Sum -> eval(expr.e1) + eval(expr.e2)
-    is NotANumber -> Double.NaN
+    var answer = 0
+    for ((key, value) in map.entries) {
+        answer += if (value >= k) k
+        else value
+    }
+    println(answer)*/
 }

@@ -1,2 +1,5 @@
-class abstractInterface {
+package abstractInterface
+
+class AbstractInterface {
+
 }

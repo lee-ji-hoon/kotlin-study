@@ -1,4 +1,4 @@
-package heapTest
+package memoryTest
 
 fun main() {
     Util.printHeap(0)

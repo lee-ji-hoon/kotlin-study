@@ -4,7 +4,7 @@ import kotlinx.coroutines.*
 
 suspend fun main() {
     val job = CoroutineScope(Dispatchers.IO).launch {
-        delay(1000)
+        println("job 실행 -> ${this}")
     }
     printJob(job)
     job.cancel()

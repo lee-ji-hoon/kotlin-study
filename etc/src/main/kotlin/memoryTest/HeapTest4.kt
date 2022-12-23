@@ -1,4 +1,4 @@
-package heapTest
+package memoryTest
 
 /**
  * StringBuffer보다 훨씬 큰 모습이다.

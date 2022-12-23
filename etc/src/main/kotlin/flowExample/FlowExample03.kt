@@ -1,26 +1,38 @@
 package flowExample
 
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
-fun main() = runBlocking<Unit> {
-    val nums = (1..3).asFlow().onEach { delay(300) }
-    val list = listOf(1, 2, 3)
-    val strs = flowOf("one", "two", "three").onEach { delay(400) }
-    val startTime = System.currentTimeMillis()
-
-    val result = nums.combine(strs) { a, b -> "$a -> $b" }.stateIn(
-        CoroutineScope(Dispatchers.IO)
-    )
-
-    result.collect { value ->
-        println("$value at ${System.currentTimeMillis() - startTime} ms from start")
+fun main(): Unit = runBlocking {
+    println("runBlocking Thread -> ${Thread.currentThread()}")
+    flow {
+        println("flow Thread -> ${Thread.currentThread()}")
+        (1..5).forEach {
+            println("forEach Thread -> ${Thread.currentThread()}")
+            emit(it)
+        }
     }
-}
+        .filter {
+            println("Filter Thread -> ${Thread.currentThread()}")
+            it % 2 != 0
+        }
+        .map {
+            println("Map Thread -> ${Thread.currentThread()}")
+            "*".repeat(it)
+        }
+        .flowOn(Dispatchers.IO)
+        .onEach { value -> println(value) }
+        .launchIn(this)
 
-fun fetchData(query: String): String {
-    return "result : query"
+    launch(Dispatchers.IO) {
+        println("Launch1 Thread -> ${Thread.currentThread()}")
+        launch {
+            println("Launch2 Thread -> ${Thread.currentThread()}")
+            launch {
+                println("Launch3 Thread -> ${Thread.currentThread()}")
+            }
+        }
+    }
 }

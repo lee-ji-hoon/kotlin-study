@@ -1,4 +1,4 @@
-package heapTest
+package memoryTest
 
 /**
  * a라는 문자열이 1byte라면 현재 예시에서는 5mb 정도 되는 것이다.
