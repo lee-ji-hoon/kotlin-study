@@ -1,5 +1,0 @@
-package abstractInterface
-
-class AbstractInterface {
-
-}

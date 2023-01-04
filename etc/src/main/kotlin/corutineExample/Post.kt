@@ -1,5 +1,0 @@
-package corutineExample
-
-class Post {
-
-}
