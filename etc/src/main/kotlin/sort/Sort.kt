@@ -3,9 +3,9 @@ package sort
 interface Sort {
     fun sort(arr: IntArray)
 
-    fun swap(arr: IntArray, start: Int, minIndex: Int) {
+    fun swap(arr: IntArray, start: Int, target: Int) {
         val temp = arr[start]
-        arr[start] = arr[minIndex]
-        arr[minIndex] = temp
+        arr[start] = arr[target]
+        arr[target] = temp
     }
 }
