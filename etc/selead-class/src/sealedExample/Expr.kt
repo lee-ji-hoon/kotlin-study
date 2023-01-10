@@ -7,7 +7,7 @@ data class Sum(val e1: Expr, val e2: Expr) : Expr()
 object NotANumber : Expr()
 
 fun main() {
-    println(System.currentTimeMillis())
+//    println(System.currentTimeMillis())
     /*val map = hashMapOf<String, Int>()
     val set = hashSetOf<String>()
     for (s in id_list) {

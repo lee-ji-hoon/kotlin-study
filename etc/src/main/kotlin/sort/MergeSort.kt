@@ -1,8 +1,8 @@
 package sort
 
-class MergeSort {
+class MergeSort : Sort {
 
-    fun sortArray(arr: IntArray) {
+    override fun sort(arr: IntArray) {
         val temp = IntArray(arr.size)
         mergeSort(arr, temp, 0, arr.size - 1)
     }
